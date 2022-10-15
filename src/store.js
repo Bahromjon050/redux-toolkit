@@ -6,6 +6,5 @@ export const store = configureStore({
     reducer: {
         counter: Counter,
         student: Student,
-        crud: 'CRUD'
     }
 })

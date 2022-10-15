@@ -17,30 +17,6 @@ export const couterSlice = createSlice({
         addCrud: (state, { payload, type }) => {
             localStorage.setItem('crud', JSON.stringify([...state.data, payload]))
             state.data = JSON.parse(localStorage.getItem('crud'))
-            // console.log(payload);
-            // switch (type) {
-            //     case ActionType.add:
-            //         console.log('add, reducers');
-            //         console.log(type, payload);
-            //         localStorage.setItem('crud', JSON.stringify([...state.data, payload]))
-            //         return {
-            //             ...state,
-            //             data: JSON.parse(localStorage.getItem('crud')) || []
-            //         }
-            //     case ActionType.edit:
-            //         localStorage.setItem('crud', JSON.stringify(state.data.map((val) => val.id === payload.id ? payload : val)))
-            //         return {
-            //             ...state,
-            //             data: JSON.parse(localStorage.getItem('crud')) || []
-            //         }
-            //     case ActionType.del:
-            //         localStorage.setItem('crud', JSON.stringify(state.data.filter((val) => val.id !== payload)))
-            //         return {
-            //             ...state,
-            //             data: JSON.parse(localStorage.getItem('crud')) || []
-            //         }
-            //     default: return state
-            // }
         },
         editCrud: (state, { payload }) => {
             localStorage.setItem('crud', JSON.stringify(state.data.map((val) => val.id === payload.id ? payload : val)))
